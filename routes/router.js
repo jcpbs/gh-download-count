@@ -13,9 +13,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/q', (req, res, next) => {
-  if (req.query.name) {
-    console.log(`searchbox value: ${req.query.name}`);
-    ghdl(req.query.name, {token: tok}, (err, repo) => {
+  var reponame = req.query.name.toString().toLowerCase();
+  if (reponame) {
+    console.log(`searchbox value: ${reponame}`);
+    ghdl(reponame, {token: tok}, (err, repo) => {
       if (err) {
         console.log(`ghdl error: ${err.message}`);
         res.render('home', {
@@ -24,43 +25,36 @@ router.get('/q', (req, res, next) => {
         });
       }
       if (repo && !Array.isArray(repo)) {
-        repo.tags.forEach((tag) => {
-          console.log(tag);
-        });
         if (repo.tags.length > 0) {
           res.render('out', {
             repo: repo,
             repos: null
           });
         } else {
-          console.log(`ghdl: no github release found for ${req.query.name}`);
+          console.log(`ghdl: no github release found for ${reponame}`);
           res.render('home', {
             err: null,
-            norepo: req.query.name
+            norepo: reponame
           });
         }
       } else if (repo && Array.isArray(repo)) {
-        repo.forEach((rep) => {
-          console.log(rep.url);
-          console.log(rep.tags);
-        });
         if (repo[0].tags.length > 0) {
           res.render('out', {
             repo: null,
             repos: repo
           });
         } else {
-          console.log(`ghdl: no github release found for ${req.query.name}`);
+          console.log(`ghdl: no github release found for ${reponame}`);
           res.render('home', {
             err: null,
-            norepo: req.query.name
+            norepo: reponame
           });
         }
       } else {
-        console.log(`ghdl: no github release found for ${req.query.name}`);
+        console.log(`ghdl: no github release found for ${reponame}`);
         res.render('home', {
           err: null,
-          norepo: req.query.name
+          norepo: reponame
         });
       }
     });
