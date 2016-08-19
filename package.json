@@ -1,0 +1,27 @@
+{
+  "name": "ghdl",
+  "version": "1.0.0",
+  "description": "ghdl web interface",
+  "scripts": {
+    "start": "node ./bin/server"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.4.1",
+    "express": "~4.13.4",
+    "ghdl": "^2.0.0",
+    "morgan": "~1.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mawni/ghdl-web.git"
+  },
+  "author": "Mawni Maghsoudlou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mawni/ghdl-web/issues"
+  },
+  "homepage": "https://github.com/mawni/ghdl-web#readme"
+}

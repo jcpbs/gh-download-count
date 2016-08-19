@@ -1,0 +1,143 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+  padding-top: 50px;
+  background-color: #5f6a6f;
+  font-family: Monospace, Helvetica, Arial, sans-serif;
+}
+h2 {
+  color: #272e31;
+}
+.lead {
+  color: #232626;
+}
+.top {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  text-align: center;
+  background-color: #4d5559;
+  border-bottom-width:2px;
+  border-bottom-color: gray;
+  border-bottom-style: solid;
+}
+.input-group-addon {
+  background-color: #cdd0d1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px ;
+  border: 0;
+}
+.input-group {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  background-color: #cdd0d1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px ;
+  border-color: #b8baba;
+}
+.form-control {
+  background-color: #cdd0d1;
+  border-color: #cdd0d1;
+}
+.navbar-fixed-top {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #202a2e;
+}
+.btn-primary {
+  margin-top: 20px;
+  background-color: #3b484f;
+  border-color: transparent;
+  color: gray;
+}
+.btn-primary:hover {
+  background-color: #24505f;
+}
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+  text-align: center;
+}
+#repo-url {
+  color: #1b5166;
+  font-weight: bold;
+  font-size: 15px;
+  padding-bottom: 1px;
+}
+.panel {
+  margin-top: 5px;
+  background-color: #6a7d83;
+  border-color: #7f878a;
+}
+.panel-info .panel-heading {
+  background-color: #b5c1c2;
+  border-color: #899fa4;
+}
+.list-group-item-info {
+  background-color: #b5c1c2;
+  border-color: #899fa4;
+}
+.panel-default {
+  background-color: #9cadad;
+  border-color: gray;
+  color: #0a5b61;
+}
+.panel-default .panel-heading {
+  background-color: #c5c8ca;
+  border-color: gray;
+  color: #0a5b61;
+}
+.list-group-item-default {
+  background-color: #c5c8ca;
+  border-color: gray;
+}
+.label {
+  background-color: #7b898c;
+  color: #d9e0e3;
+}
+#tag-download {
+  font-size: 16px;
+}
+.alert {
+  text-align: center;
+  width: auto;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #202a2e;
+}
+.footer-content {
+  padding-top: 15px;
+  font-size: 16px;
+}
+.footer-cli {
+  float: left;
+  margin-left: 50px;
+  color: #37677b;
+}
+.footer-api {
+  float: right;
+  margin-right: 50px;
+  color: #37677b;
+}
+.header-link {
+	float: right;
+	color: #37677b;
+	font-size: 16px;
+	margin-top: 15px;
+	margin-right: 50px;
+}
+.navbar-header {
+	margin-left: 20px;
+}
