@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const ghdl = require('ghdl');
+const ghdl = require('./ghdl.js');
 const router = express.Router();
 const tok = process.env.GITHUB_TOKEN;
 var count = 0;
