@@ -23,8 +23,16 @@ h2 {
   border-bottom-color: gray;
   border-bottom-style: solid;
 }
+.fuz-label {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.fuz-info {
+	color: #032029;
+}
 .input-group-addon {
-  background-color: #cdd0d1;
+	margin-right: 0;
+	background-color: #cdd0d1;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px ;
@@ -33,7 +41,7 @@ h2 {
 .input-group {
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  width: 550px;
   background-color: #cdd0d1;
   border-radius: 4px;
   -webkit-border-radius: 4px;

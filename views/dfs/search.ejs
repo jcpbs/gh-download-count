@@ -1,6 +1,6 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-		<div class="navbar-header">
+    <div class="navbar-header">
       <a class="navbar-brand" href="/">ghdl web interface</a>
     </div>
     <a class="header-link" href="https://github.com/mawni/ghdl-web" target="_blank">This project on <i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
@@ -9,10 +9,13 @@
 
 <div class="top">
   <h2>Get download info of a GitHub release</h2>
-    <p class="lead"><i>Please enter the name of a GitHub repository and press enter</i></p>
-    <div class="input-group">
-  		<input id="name" type="text" class="form-control" placeholder="repository name.." onkeypress="fetch(event)">
-  		<span class="input-group-addon" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
-  		<a id="namelink" href=""></a>
-		</div>
+  <p class="lead"><i>Please enter the name of a GitHub repository and press enter</i></p>
+  <p class="fuz-info"><strong><i>fuzzy search: find releases although the given name doesn't match exactly.</i></strong></p>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+    <input id="name" type="text" class="form-control" placeholder="repository name.." onkeypress="fetch(event)">
+    <span class="input-group-addon"><label class="fuz-label"><i>fuzzy search</i></label></span>
+    <span class="input-group-addon"><input id="fuz-checkbox" type="checkbox" aria-label="..."></span>
+    <a id="namelink" href=""></a>
+  </div>
 </div>
