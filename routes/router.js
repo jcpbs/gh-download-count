@@ -4,10 +4,8 @@ const express = require('express');
 const ghdl = require('./ghdl.js');
 const router = express.Router();
 const tok = process.env.GITHUB_TOKEN;
-var count = 0;
 
 router.get('/', function(req, res, next) {
-  count += 1;
   res.render('home', {
     err: null,
     norepo: null
@@ -15,14 +13,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/q', (req, res, next) => {
-  count += 1;
   var reponame = req.query.name.toString().toLowerCase();
   var all = null;
   if (req.query.fuz === 'y') {
     all = 'all';
   }
   if (reponame) {
-    console.log(`searchbox value: ${reponame}`);
     ghdl(reponame, {token: tok}, all, (err, repo) => {
       if (err) {
         console.log(`ghdl error: ${err.message}`);
@@ -71,10 +67,6 @@ router.get('/q', (req, res, next) => {
       norepo: null
     });
   }
-});
-
-router.get('/gc', (req, res, next) => {
-  res.send(`count: ${count}`);
 });
 
 module.exports = router;
