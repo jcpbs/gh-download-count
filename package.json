@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mawni/ghdl-web.git"
+    "url": "git+https://github.com/manidlou/ghdl-web.git"
   },
-  "author": "Mawni Maghsoudlou",
+  "author": "Mani Maghsoudlou",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mawni/ghdl-web/issues"
+    "url": "https://github.com/manidlou/ghdl-web/issues"
   },
-  "homepage": "https://github.com/mawni/ghdl-web#readme"
+  "homepage": "https://github.com/manidlou/ghdl-web#readme"
 }
