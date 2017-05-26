@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <% include dfs/head.ejs %>
+  <% include partials/head.ejs %>
   <body>
-    <% include dfs/header.ejs %>
+    <% include partials/header.ejs %>
     <div class="container-fluid">
-      <% include dfs/search.ejs %>
+      <% include partials/search.ejs %>
 
       <% if (repo) { %>
       <div class="panel panel-info top len">
@@ -32,7 +32,7 @@
           </div>
 
           <% if (repo.tags.length > 1) { %>
-            <% repo.tags.slice(1, repo.tags.length).forEach((tag) => { %>
+            <% repo.tags.slice(1, repo.tags.length).forEach(tag => { %>
               <div class="panel panel-default">
                 <div class="panel-heading"><h6><strong><i><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= tag.tagname %></i></strong></h6>
                 <p><span class="glyphicon glyphicon-share" aria-hidden="true"></span> <%= tag.published_at %></p></div>
@@ -85,7 +85,7 @@
             <% } %>
 
           <% if (repo.tags.length > 1) { %>
-            <% repo.tags.slice(1, repo.tags.length).forEach((tag) => { %>
+            <% repo.tags.slice(1, repo.tags.length).forEach(tag => { %>
               <div class="panel panel-default">
                 <div class="panel-heading"><h6><strong><i><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= tag.tagname %></i></strong></h6>
                 <p><span class="glyphicon glyphicon-share" aria-hidden="true"></span> <%= tag.published_at %></p></div>
@@ -112,6 +112,6 @@
         <% }) %>
       <% } %>
     </div>
-    <% include dfs/dfjs.ejs %>
+    <% include partials/dfjs.ejs %>
   </body>
 </html>

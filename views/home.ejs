@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <% include dfs/head.ejs %>
+  <% include partials/head.ejs %>
   <body>
-  	<% include dfs/header.ejs %>
-  	<div class="container-fluid">
+    <% include partials/header.ejs %>
+    <div class="container-fluid">
     
-    <% include dfs/search.ejs %>
+    <% include partials/search.ejs %>
     
     <% if (err) { %>
     <div class="alert alert-danger alert-dismissible info" role="alert">
@@ -20,7 +20,7 @@
       No GitHub release found for <strong><i><%= norepo %></i></strong>. Please make sure the given name is a real GitHub repository name.
     </div>
     <% } %>
-		</div>
-    <% include dfs/dfjs.ejs %>
+    </div>
+    <% include partials/dfjs.ejs %>
   </body>
 </html>
