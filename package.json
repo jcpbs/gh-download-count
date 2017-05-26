@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node server.js"
   },
+  "config": {
+    "githubToken": "7a224dafc9191e781df25e7a5b50ecfd546f4149"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manidlou/ghdl.git"

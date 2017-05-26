@@ -7,7 +7,7 @@ const http = require('http')
 const express = require('express')
 const bodyParser = require('body-parser')
 const ghdl = require('./ghdl.js')
-const tok = process.env.GITHUB_TOKEN || '7a224dafc9191e781df25e7a5b50ecfd546f4149'
+const tok = require('./package.json').config.githubToken || process.env.GITHUB_TOKEN
 const app = express()
 
 function normalizePort (val) {
