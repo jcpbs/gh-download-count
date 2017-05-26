@@ -1,15 +1,16 @@
 /**
- * ghdl.js
+ * gh-download-count.js
  *
  * Copyright (c) 2017 Mani Maghsoudlou
  * Released under the MIT license
  */
 
 /**
- * ghdl (github download) is a tiny module to get download info
- * of a github release. It searches all github repositories for a given
- * repository name and returns an object or an array of objects that
- * each object contain download info of all tags of the given repo.
+ * gh-download-count is a tiny module to get download info
+ * of a GitHub release. It searches all GitHub repositories using 
+ * the GitHub REST API v3, for a given repository name and returns
+ * an object or an array of objects that each object contains
+ * download info of all tags of the given repo.
  *
  */
 
@@ -18,14 +19,13 @@
 const got = require('gh-got')
 
 /*
- * ghdl main function that gets the name of a github
- * repository and returns download info of all tags
- * of the given repo.
+ * gh-download-count main function that gets the name of a GitHub
+ * repository and returns download info of all tags of the given repo.
  *
  * @public
  */
 
-function ghdl (reponame, opts, cb) {
+function ghdlc (reponame, opts, cb) {
   opts.headers = Object.assign({
     'user-agent': 'https://github.com/manidlou/ghdl'
   }, opts.headers)
@@ -56,7 +56,7 @@ function ghdl (reponame, opts, cb) {
 }
 
 /*
- * search github repositories for a given repo name
+ * search GitHub repositories for a given repo name.
  *
  *@private
  */
@@ -148,4 +148,4 @@ function getTagInfo (repo, opts, cb) {
   })
 }
 
-module.exports = ghdl
+module.exports = ghdlc

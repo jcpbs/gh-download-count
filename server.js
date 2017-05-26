@@ -6,7 +6,7 @@ const path = require('path')
 const http = require('http')
 const express = require('express')
 const bodyParser = require('body-parser')
-const ghdl = require('./ghdl.js')
+const ghdlc = require('./gh-download-count.js')
 const tok = process.env.GITHUB_TOKEN
 const app = express()
 
@@ -43,7 +43,7 @@ function onError (error) {
 const server = http.createServer(app)
 const port = normalizePort(process.env.PORT || 8080)
 app.set('port', port)
-server.listen(port, () => console.log(`ghdl server listening on port ${port}..`))
+server.listen(port, () => console.log(`gh-download-count server listening on port ${port}..`))
 server.on('error', onError)
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -65,7 +65,7 @@ app.get('/q', (req, res) => {
     opts.exactMatch = false
   }
   if (reponame) {
-    ghdl(reponame, opts, (err, repo) => {
+    ghdlc(reponame, opts, (err, repo) => {
       if (err) {
         console.log(`ghdl error: ${err.message}`)
         res.render('home', {
