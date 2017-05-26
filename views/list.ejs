@@ -2,27 +2,28 @@
 <html lang="en">
   <% include dfs/head.ejs %>
   <body>
-    <% include dfs/search.ejs %>
-    <div class="container">
+    <% include dfs/header.ejs %>
+    <div class="container-fluid">
+      <% include dfs/search.ejs %>
 
       <% if (repo) { %>
-      <div class="panel panel-info">
+      <div class="panel panel-info top len">
         <div class="panel-body">
 
           <div class="panel panel-info">
             <div class="panel-heading">
               <p><strong><i class="fa fa-code fa-lg" aria-hidden="true"></i> <i><a id="repo-url" href="<%= repo.url %>" target="_blank"><%= repo.url %></a></i></strong></p>
-              <h4><strong><i><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> latest tag: <%= repo.tags[0].tagname %></i></strong></h4>
-              <p><span class="glyphicon glyphicon-share" aria-hidden="true"></span> published at: <%= repo.tags[0].published_at %></p></div>
+              <h6><strong><i><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> latest tag: <%= repo.tags[0].tagname %></i></strong></h6>
+              <p><span class="glyphicon glyphicon-share" aria-hidden="true"></span> published: <%= repo.tags[0].published_at %></p></div>
           
-              <div class="panel-body">
+              <div id="latest-tag-body" class="panel-body">
                 <ul class="list-group">
                   <% if (repo.tags[0].files.length > 0) { %>
-                  <% repo.tags[0].files.forEach((f) => { %>
+                  <% repo.tags[0].files.forEach(f => { %>
                     <li class="list-group-item list-group-item-info">
                       <p><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <%= f.filename %></p>
-                      <p><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> updated at: <%= f.updated_at %></p>
-                      <h4><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> download: <span class="label label-default"><strong><%= f.download %></strong></span></h4>
+                      <p><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> updated: <%= f.updated_at %></p>
+                      <h6><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> download: <span class="label label-default"><strong><%= f.download %></strong></span></h6>
                     </li>
                   <% }); %>
                   <% } %>
@@ -33,13 +34,13 @@
           <% if (repo.tags.length > 1) { %>
             <% repo.tags.slice(1, repo.tags.length).forEach((tag) => { %>
               <div class="panel panel-default">
-                <div class="panel-heading"><h5><strong><i><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= tag.tagname %></i></strong></h5>
+                <div class="panel-heading"><h6><strong><i><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= tag.tagname %></i></strong></h6>
                 <p><span class="glyphicon glyphicon-share" aria-hidden="true"></span> <%= tag.published_at %></p></div>
 
                 <div class="panel-body">
                   <ul class="list-group">
                     <% if (tag.files.length > 0) { %>
-                    <% tag.files.forEach((f) => { %>
+                    <% tag.files.forEach(f => { %>
                     <li class="list-group-item list-group-item-default">
                       <p><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <%= f.filename %></p>
                       <p><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <%= f.updated_at %></p>
@@ -57,25 +58,25 @@
       <% } %>
 
       <% if (repos) { %>
-      <% repos.forEach((repo) => { %>
-        <div class="panel panel-info">
+      <% repos.forEach(repo => { %>
+        <div class="panel panel-info top len">
           <div class="panel-body">
 
             <div class="panel panel-info">
               <div class="panel-heading">
                 <p><strong><i class="fa fa-code fa-lg" aria-hidden="true"></i> <i><a id="repo-url" href="<%= repo.url %>" target="_blank"><%= repo.url %></a></i></strong></p>
-                <h4><strong><i><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> latest tag: <%= repo.tags[0].tagname %></i></strong></h4>
-                <p><span class="glyphicon glyphicon-share" aria-hidden="true"></span> published at: <%= repo.tags[0].published_at %></p>
+                <h6><strong><i><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> latest tag: <%= repo.tags[0].tagname %></i></strong></h6>
+                <p><span class="glyphicon glyphicon-share" aria-hidden="true"></span> published: <%= repo.tags[0].published_at %></p>
               </div>
           
-              <div class="panel-body">
+              <div id="latest-tag-body" class="panel-body">
                 <ul class="list-group">
                   <% if (repo.tags[0].files.length > 0) { %>
-                  <% repo.tags[0].files.forEach((f) => { %>
+                  <% repo.tags[0].files.forEach(f => { %>
                     <li class="list-group-item list-group-item-info">
                       <p><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <%= f.filename %></p>
-                      <p><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> updated at: <%= f.updated_at %></p>
-                      <h4><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> download: <span class="label label-default"><strong><%= f.download %></strong></span></h4>
+                      <p><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> updated: <%= f.updated_at %></p>
+                      <h6><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> download: <span class="label label-default"><strong><%= f.download %></strong></span></h6>
                     </li>
                   <% }); %>
                 </ul> 
@@ -86,13 +87,13 @@
           <% if (repo.tags.length > 1) { %>
             <% repo.tags.slice(1, repo.tags.length).forEach((tag) => { %>
               <div class="panel panel-default">
-                <div class="panel-heading"><h5><strong><i><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= tag.tagname %></i></strong></h5>
+                <div class="panel-heading"><h6><strong><i><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> <%= tag.tagname %></i></strong></h6>
                 <p><span class="glyphicon glyphicon-share" aria-hidden="true"></span> <%= tag.published_at %></p></div>
     
                 <div class="panel-body">
                   <ul class="list-group">
                     <% if (tag.files.length > 0) { %>
-                    <% tag.files.forEach((f) => { %>
+                    <% tag.files.forEach(f => { %>
                     <li class="list-group-item list-group-item-default">
                       <p><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <%= f.filename %></p>
                       <p><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <%= f.updated_at %></p>
@@ -110,8 +111,7 @@
         
         <% }) %>
       <% } %>
-    </div><!-- /.container -->
-    <% include dfs/footer.ejs %>
+    </div>
     <% include dfs/dfjs.ejs %>
   </body>
 </html>

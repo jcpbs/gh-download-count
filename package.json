@@ -1,27 +1,24 @@
 {
-  "name": "ghdl-web",
-  "version": "1.1.1",
-  "description": "ghdl web interface",
+  "name": "ghdl",
+  "version": "1.0.0",
+  "description": "Get download count of a GitHub release",
   "scripts": {
-    "start": "node ./bin/server"
-  },
-  "dependencies": {
-    "body-parser": "~1.15.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
-    "ejs": "~2.4.1",
-    "express": "~4.13.4",
-    "ghdl": "^2.0.0",
-    "morgan": "~1.7.0"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manidlou/ghdl-web.git"
+    "url": "git+https://github.com/manidlou/ghdl.git"
   },
   "author": "Mani Maghsoudlou",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/manidlou/ghdl-web/issues"
+    "url": "https://github.com/manidlou/ghdl/issues"
   },
-  "homepage": "https://github.com/manidlou/ghdl-web#readme"
+  "homepage": "https://github.com/manidlou/ghdl#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "gh-got": "^5.0.0"
+  }
 }

@@ -2,23 +2,25 @@
 <html lang="en">
   <% include dfs/head.ejs %>
   <body>
+  	<% include dfs/header.ejs %>
+  	<div class="container-fluid">
+    
     <% include dfs/search.ejs %>
     
     <% if (err) { %>
-    <div class="alert alert-danger alert-dismissible" role="alert">
+    <div class="alert alert-danger alert-dismissible info" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <strong>error:</strong> <%= err %>
+      <strong>Error:</strong> <%= err %>
     </div>
     <% } %>
     
     <% if (norepo) { %>
-    <div class="alert alert-danger alert-dismissible" role="alert">
+    <div class="alert alert-danger alert-dismissible info" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      no GitHub release found for <%= norepo %>. make sure the given name is a real GitHub repository name.
+      No GitHub release found for <strong><i><%= norepo %></i></strong>. Please make sure the given name is a real GitHub repository name.
     </div>
     <% } %>
-    
-    <% include dfs/footer.ejs %>
+		</div>
     <% include dfs/dfjs.ejs %>
   </body>
 </html>

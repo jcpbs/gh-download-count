@@ -1,21 +1,24 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">ghdl web interface</a>
-    </div>
-    <a class="header-link" href="https://github.com/manidlou/ghdl-web" target="_blank">This project on <i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
-  </div>
-</nav>
-
 <div class="top">
-  <h2>Get download info of a GitHub release</h2>
-  <p class="lead"><i>Please enter the name of a GitHub repository and press enter</i></p>
-  <p class="fuz-info"><strong><i>fuzzy search: find releases although the given name doesn't match exactly.</i></strong></p>
-  <div class="input-group">
-    <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
-    <input id="name" type="text" class="form-control" placeholder="repository name.." onkeypress="fetch(event)">
-    <span class="input-group-addon"><label class="fuz-label"><i>fuzzy search</i></label></span>
-    <span class="input-group-addon"><input id="fuz-checkbox" type="checkbox" aria-label="..."></span>
-    <a id="namelink" href=""></a>
+    <h2>Get download count of a GitHub release</h2>
+    <p id="lead"><i>Enter the name of a GitHub repository and press enter</i></p>
+    <div class="container">
+        <div id="sw" class="row justify-content-center no-gutters">
+          <div class="col-md-6">
+            <p><strong id="fuz-info"><i>Find releases although the name doesn't match exactly.</i></strong></p>
+          </div>
+          <div class="col-md-1">
+            <div class="bootstrap-switch-square">
+              <input id="fuz-checkbox" type="checkbox" checked data-toggle="switch" data-on-text="<span class='fui-check'></span>" data-off-text="<span class='fui-cross'></span>" />
+            </div>
+          </div>
+        </div>
+      </div>
+  <div id="search-inp" class="input-group input-group-rounded col-md-offset-3">
+    <span class="input-group-btn">
+      <button id="search" type="submit" class="btn"><span class="fui-search"></span></button>
+    </span>
+    <input id="name" type="text" class="form-control" placeholder="repository name.." onkeypress="search(event)">
   </div>
+  <a id="namelink" href=""></a>
+
 </div>
