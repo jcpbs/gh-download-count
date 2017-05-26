@@ -25,6 +25,7 @@ input {
 .header-link {
   float: right;
   font-size: 140%;
+  font-weight: bold;
   margin-top: 0.4em;
 }
 .input-group {

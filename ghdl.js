@@ -37,7 +37,7 @@ function ghdl (reponame, opts, cb) {
     if (repos) {
       getAllTags(repos, reponame, opts, (err, res) => {
         if (err) return cb(err)
-        if (res && res.length === 0) return cb(null, null)
+        if (res && res.length === 0) return cb()
         else if (res && res.length === 1 && res[0].tags.length > 0 && res[0].tags[0].files.length > 0) {
           return cb(null, res[0])
         } else if (res && res.length > 1) {
